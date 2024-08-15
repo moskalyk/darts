@@ -147,6 +147,7 @@ function App() {
     <div className="App">
       <h1 style={{marginLeft: '-40px'}}>Dartboard Game</h1>
       <DartboardGame />
+      <p>spacebar to play, left control button to recenter</p>
     </div>
   );
 }
