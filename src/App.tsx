@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import dartBoard from './assets/Dartboard.jpg'
 
 import './App.css';
@@ -13,23 +13,6 @@ function Dartboard() {
       />
     </div>
   );
-}
-
-function useScopeDrift(initialPosition: { x: number, y: number }) {
-  const [position, setPosition] = useState(initialPosition);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition(prevPosition => ({
-        x: Math.max(0, Math.min(290, prevPosition.x + (Math.random() * 2 - 1) * 5)), // Keep within bounds
-        y: Math.max(0, Math.min(290, prevPosition.y + (Math.random() * 2 - 1) * 5)), // Keep within bounds
-      }));
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return position;
 }
 
 function Scope({ position }: { position: { x: number, y: number } }) {
